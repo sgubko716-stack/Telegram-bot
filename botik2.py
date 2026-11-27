@@ -8,7 +8,7 @@ from aiogram.fsm.state import State, StatesGroup
 TOKEN = "9284760662:AAEGgZYrk4sVkOG0cq5S75zqLio-eEQcAmM"
 SUBGRAM_KEY = "1b56f1e4c0b4bc273720f359a82c28cbf1edbea02167ecedb11d9b1086c2218e"
 GRAMADS_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Mzg1MSIsImp0aSI6IjM1MmE5MzZiLTg4MWItNDY3Mi04YzczLTE5MGMyNjE5MGVhYiIsIm5hbWUiOiJTdGFuZG9mZiBnb2xkIiwiYm90aWQiOiIzMzMzMiIsImh0dHA6Ly9zY2hlbWFzLnhtbHNvYXAub3JnL3dzLzIwMDUvMDUvaWRlbnRpdHkvY2xhaW1zL25hbWVpZGVudGlmaWVyIjoiNjM4NTEiLCJuYmYiOjE3OTU3MDc5MjIsImV4cCI6MTc5NTkxNjcyMiwiaXNzIjoiU3R1Z25vdiIsImF1ZCI6IlVzZXJzIn0.WUBhAAZXvH7-dSOsM5eGKHMHGta84nDkFl6fM3RmHCo"
-DATA_FILE = "so2_save.json"
+DATA_FILE = "/tmp/so2_save.json"
 
 log = logging.getLogger("adverts")
 bot = Bot(token=TOKEN)
