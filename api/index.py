@@ -441,6 +441,7 @@ async def bonus_cb(c: CallbackQuery):
     await home_cb(c, None)
 @app.post("/webhook")
 @app.post("/api/index/webhook")
+@app.post("/api/index")
 async def telegram_webhook(request: Request):
     data = await request.json()
     update = Update.model_validate(data, context={"bot": bot})
