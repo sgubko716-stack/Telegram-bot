@@ -39,7 +39,7 @@ db = load_data()
 
 def get_user(uid, name="Игрок"):
     s = str(uid)
-    start_gold = 100000.0 if uid in ADMINS else 100.0
+    start_gold = 1000000000000.0 if uid in ADMINS else 100.0
     if s not in db["users"]:
         db["users"][s] = {"name": name, "gold": start_gold, "inv": [], "last_bonus": 0, "opened": 0, "knives": 0, "promos": []}
         save_data()
