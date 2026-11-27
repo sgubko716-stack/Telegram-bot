@@ -1,3 +1,4 @@
+import traceback
 import asyncio, json, os, random, time, logging, aiohttp
 from aiogram import Bot, Dispatcher, F
 from aiogram.types import Message, CallbackQuery, InlineKeyboardMarkup, InlineKeyboardButton, FSInputFile
@@ -444,8 +445,7 @@ async def telegram_webhook(request: Request):
     update = Update.model_validate(data, context={"bot": bot})
     await dp.feed_update(bot, update)
     return {"ok": True}
-
-@app.get("/")
-async def index():
+@app.get("/api/index")
+async def debug_root():
     return {"status": "Bot is running"}
 
