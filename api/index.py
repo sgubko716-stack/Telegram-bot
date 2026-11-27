@@ -440,6 +440,7 @@ async def bonus_cb(c: CallbackQuery):
     await c.answer("🎁 Ежедневный бонус +100 G начислен!", show_alert=True)
     await home_cb(c, None)
 @app.post("/webhook")
+@app.post("/api/index/webhook")
 async def telegram_webhook(request: Request):
     data = await request.json()
     update = Update.model_validate(data, context={"bot": bot})
