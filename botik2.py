@@ -13,6 +13,9 @@ DATA_FILE = "so2_save.json"
 log = logging.getLogger("adverts")
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
+from fastapi import FastAPI, Request
+from aiogram.types import Update
+app = FastAPI()
 
 class BotStates(StatesGroup):
     waiting_code = State()
