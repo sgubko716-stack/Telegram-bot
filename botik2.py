@@ -438,10 +438,14 @@ async def bonus_cb(c: CallbackQuery):
     save_data()
     await c.answer("🎁 Ежедневный бонус +100 G начислен!", show_alert=True)
     await home_cb(c, None)
+@app.post("/webhook")
+async def telegram_webhook(request: Request):
+    data = await request.json()
+    update = Update.model_validate(data, context={"bot": bot})
+    await dp.feed_update(bot, update)
+    return {"ok": True}
 
-async def main():
-    print("БОТ УСПЕШНО ЗАПУЩЕН!")
-    await bot.delete_webhook(drop_pending_updates=True)
-    await dp.start_polling(bot)
+@app.get("/")
+async def index():
+    return {"status": "Bot is running"}
 
-asyncio.run(main())
